@@ -17,9 +17,13 @@ jobs:
       with:
         node-version: '18.x.x'
 
-    - name: Build and Deploy
+    - name: Build
       run: |
         export NODE_OPTIONS=--openssl-legacy-provider
         npm install --openssl-legacy-provider
         npm run build --openssl-legacy-provider 
-        npm run deploy --openssl-legacy-provider
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+       github_token: ${{ secrets.GITHUB_TOKEN }}
+       publish_dir: ./build
