@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build and Deploy # adding a comment to rebuild -- it should work now since i renamed it from dark-scratch to scratch-gui
 
 on:
   push:
