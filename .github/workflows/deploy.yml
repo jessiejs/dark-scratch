@@ -1,4 +1,4 @@
-name: Build and Deploy # adding a comment to rebuild -- it should work now since i renamed it from dark-scratch to scratch-gui
+name: Build and Deploy
 
 on:
   push:
@@ -17,6 +17,5 @@ jobs:
     steps:
     - name: Build and Deploy
       run: |
-        cd ../
         npm run build
         npm run deploy
