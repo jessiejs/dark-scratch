@@ -22,8 +22,10 @@ jobs:
         export NODE_OPTIONS=--openssl-legacy-provider
         npm install --openssl-legacy-provider
         npm run build --openssl-legacy-provider 
+        
     - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
+      uses: actions/upload-pages-artifact@master
       with:
-       github_token: ${{ secrets.GITHUB_TOKEN }}
-       publish_dir: ./build
+        path: build
+
+ 
