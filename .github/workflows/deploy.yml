@@ -9,13 +9,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x]
-
     steps:
+    - uses: actions/checkout@master
+
+    - name: Set up node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '18.x.x'
+
     - name: Build and Deploy
       run: |
+        npm install
         npm run build
         npm run deploy
